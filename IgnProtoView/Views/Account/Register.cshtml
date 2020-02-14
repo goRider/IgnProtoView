@@ -1,0 +1,122 @@
+﻿@using IgnProtoView.Data
+@using Microsoft.AspNetCore.Identity
+@model IgnProtoView.ViewComponents.RegisterViewComponent
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@inject UserManager<IgniteUser> UserManager
+
+
+<div class="card row" style="background-color: #d2d1d1; padding: 25px;
+                                      margin-top: 20px;
+                                      border-radius: 0;">
+    <div class="col-md-8">
+        <form method="post" asp-action="Register">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="Input.UserName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Input.UserName" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="Input.FirstName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Input.FirstName" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="Input.MiddleInitial"></label>
+                    </div>
+
+                    <div class="col-8">
+                        <input asp-for="Input.MiddleInitial" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="Input.LastName"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Input.LastName" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="Input.Email"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Input.Email" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="Input.Password"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Input.Password" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                        <label asp-for="Input.ConfirmPassword"></label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Input.ConfirmPassword" />
+                    </div>
+                </div>
+            </div>
+
+            @if (User.IsInRole(IgnProtoView.Data.Utility.UserRole.AdminUser))
+            {
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label asp-for="Input.IsAdmin"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Input.IsAdmin" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-4">
+                    </div>
+                    <div class="col-8">
+                        <button type="submit" class="form-control btn btn-success">Register</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

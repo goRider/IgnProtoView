@@ -1,0 +1,58 @@
+﻿@model IgnProtoView.ViewComponents.LoginViewComponent
+@{
+}
+
+
+<div>
+    <div style="padding-bottom: 20px;">
+        <h2>Login</h2>
+    </div>
+    <div class="card" style="background-color: #d2d1d1; padding: 25px;">
+        <div class="col-md-5">
+            <form method="post" asp-action="Login">
+                <div asp-validation-summary="All"></div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label asp-for="Input.UserName"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Input.UserName" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label asp-for="Input.Password"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Input.Password" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-4">
+                            <label asp-for="Input.RememberMe"></label>
+                        </div>
+                        <div class="col-8">
+                            <input asp-for="Input.RememberMe" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div>
+                        <button type="submit" class="form-control btn btn-success">Login</button>
+                    </div>
+
+                </div>
+                <a asp-page="/Account/ChangePassword">Forgot my Password</a>
+            </form>
+        </div>
+    </div>
+</div>
